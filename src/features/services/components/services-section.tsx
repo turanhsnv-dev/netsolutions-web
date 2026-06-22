@@ -73,8 +73,8 @@ export const ServicesSection = () => {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} id="services" className="w-full bg-white dark:bg-[#050505] py-20 md:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto">
+    <section ref={sectionRef} id="services" className="w-full bg-white dark:bg-[#050505] py-20 md:py-24 transition-colors duration-300">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Başlıq Hissəsi */}
         <header className="flex flex-col items-center text-center mb-14 md:mb-16">

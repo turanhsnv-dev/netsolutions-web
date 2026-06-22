@@ -1,7 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useRef } from 'react';
-import { Target, CheckCircle2, Shield, Cpu } from 'lucide-react';
+import { Target, CheckCircle2, Shield } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -87,12 +88,20 @@ export const AboutSection = () => {
           {/* Sağ Sütun: Vizual (Qutular) */}
           <div className="relative h-[500px] w-full hidden lg:block">
             
-            {/* Böyük arxa şəkil qutusu */}
-            <div className="about-visual-box absolute top-0 right-0 w-[85%] h-[400px] bg-slate-100 dark:bg-[#0B1120] rounded-[32px] overflow-hidden border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] dark:from-[#0B1120] dark:to-[#050505] flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-colors duration-300">
-                 <Cpu className="w-16 h-16 mb-4 opacity-20 dark:opacity-10" />
-                 <span className="text-sm font-semibold opacity-50">Komanda / Ofis Şəkli (Placeholder)</span>
-              </div>
+            {/* Böyük arxa şəkil */}
+            <div className="about-visual-box absolute top-0 right-0 w-[85%] h-[400px] rounded-[32px] overflow-hidden border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+              <Image
+                src="/images/about-img.jpg"
+                alt="NetSolutions komandası ofisdə İT sistemləri üzərində işləyir"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 85vw, 470px"
+                priority
+              />
+              <div
+                className="absolute inset-0 hidden dark:block bg-gradient-to-t from-[#050505] via-[#050505]/45 to-transparent"
+                aria-hidden="true"
+              />
             </div>
 
             {/* Ön tərəfə çıxan kiçik şəkil qutusu */}

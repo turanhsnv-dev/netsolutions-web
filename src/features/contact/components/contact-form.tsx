@@ -25,7 +25,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="p-2 md:p-6">
+    <div>
       <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">Bizə Yazın</h3>
       <p className="text-slate-500 dark:text-slate-400 mb-8 transition-colors">İT ehtiyaclarınızı müzakirə etmək üçün mütəxəssislərimizlə əlaqə saxlayın.</p>
 

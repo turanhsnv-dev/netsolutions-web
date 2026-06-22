@@ -3,18 +3,14 @@ import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NAV_LINKS, CONTACT_INFO } from '@/constants/navigation';
 import { ThemeToggle } from './theme-toggle';
+import { Logo } from './logo';
 
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-100 dark:border-slate-800/50 bg-white/80 dark:bg-[#050505]/80 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-[1100px] mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0275d8] rounded-md">
-          <span className="text-2xl font-bold tracking-tight text-[#111111] dark:text-white">
-            Net<span className="text-[#0275d8]">Solutions</span>
-          </span>
-        </Link>
+        <Logo variant="mark" height={52} />
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">

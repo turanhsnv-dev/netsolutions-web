@@ -1,19 +1,16 @@
 import Link from 'next/link';
 import { NAV_LINKS, FOOTER_SERVICES, CONTACT_INFO } from '@/constants/navigation';
+import { Logo } from './logo';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#F8F9FA] dark:bg-[#050505] border-t border-slate-100 dark:border-slate-900 pt-16 pb-8 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto">
+    <footer className="bg-[#F8F9FA] dark:bg-[#050505] border-t border-slate-100 dark:border-slate-900 pt-16 pb-8 transition-colors duration-300">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold tracking-tight text-[#111111] dark:text-white transition-colors">
-                Net<span className="text-[#0275d8] dark:text-[#3b82f6]">Solutions</span>
-              </span>
-            </Link>
+            <Logo variant="full" height={80} className="mb-4" />
             <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed max-w-sm mb-6 transition-colors">
               Biz bizneslər üçün etibarlı, təhlükəsiz və müasir İT həlləri təqdim edərək texnoloji inkişafı sürətləndiririk.
             </p>
