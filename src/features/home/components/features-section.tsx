@@ -31,31 +31,34 @@ export const FeaturesSection = () => {
     });
 
     if (headerEls.length) {
-      tl.from(headerEls, {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: 'power3.out',
-        immediateRender: false,
-      });
+      tl.fromTo(
+        headerEls,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: 'power3.out',
+        }
+      );
     }
 
     if (cards.length) {
-      tl.from(
+      tl.fromTo(
         cards,
+        { y: 50, opacity: 0 },
         {
-          y: 50,
-          opacity: 0,
+          y: 0,
+          opacity: 1,
           duration: 0.8,
           stagger: {
             each: 0.1,
             from: 'start',
           },
           ease: 'power3.out',
-          immediateRender: false,
         },
-        '-=0.2',
+        '-=0.2'
       );
     }
 

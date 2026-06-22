@@ -11,6 +11,10 @@ const ContactSection = dynamic(
   () => import('@/features/contact/components/contact-section').then((mod) => mod.ContactSection)
 );
 
+const TestimonialsSection = dynamic(
+  () => import('@/features/testimonials/components/testimonials-section').then((mod) => mod.TestimonialsSection)
+);
+
 export default function Home() {
   return (
     <>
@@ -18,6 +22,7 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <ServicesSection />
+      <TestimonialsSection />
       <ContactSection />
     </>
   );
