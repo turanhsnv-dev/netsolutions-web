@@ -7,23 +7,23 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#FAFAFA] py-24 sm:py-32">
+    <main className="min-h-screen bg-[#FAFAFA] dark:bg-[#050505] py-24 sm:py-32 transition-colors duration-300">
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[32px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100">
-          <div className="mb-10 border-b border-slate-100 pb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">İstifadə Şərtləri</h1>
-            <p className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+        <div className="bg-white dark:bg-[#0B1120] p-8 md:p-12 lg:p-16 rounded-[32px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 transition-colors duration-300">
+          <div className="mb-10 border-b border-slate-100 dark:border-slate-800 pb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 transition-colors">İstifadə Şərtləri</h1>
+            <p className="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wide transition-colors">
               Son yenilənmə tarixi: {new Date().toLocaleDateString('az-AZ')}
             </p>
-            <p className="mt-4 text-[16px] text-slate-600 leading-relaxed">
+            <p className="mt-4 text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
               Bu sənəd NetSolutions.az veb-saytından istifadə qaydalarını, hüquq və məsuliyyətləri müəyyən edir.
               Sayta daxil olmaq və xidmətlərimiz haqqında məlumat almaq bu şərtləri qəbul etməniz deməkdir.
             </p>
           </div>
 
-          <div className="space-y-8 text-[16px] text-slate-600 leading-relaxed">
+          <div className="space-y-8 text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">1. Şərtlərin Qəbulu</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">1. Şərtlərin Qəbulu</h2>
               <p>
                 NetSolutions.az veb-saytına daxil olaraq və ondan istifadə edərək, siz bu İstifadə Şərtləri və
                 qaydaları ilə tam razılaşdığınızı bəyan edirsiniz. Əgər bu şərtlərlə razı deyilsinizsə, xahiş
@@ -36,7 +36,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">2. Təriflər</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">2. Təriflər</h2>
               <p>
                 Bu sənəddə &quot;Şirkət&quot;, &quot;NetSolutions&quot;, &quot;biz&quot; ifadələri NetSolutions
                 şirkətini; &quot;Sayt&quot; netsolutions.az domenində yerləşən veb-saytı; &quot;İstifadəçi&quot;
@@ -47,7 +47,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">3. Saytın Məqsədi və Xidmətlər</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">3. Saytın Məqsədi və Xidmətlər</h2>
               <p>
                 Veb-saytımız bizneslərə təqdim etdiyimiz İT həlləri haqqında məlumat vermək, potensial
                 müştərilərlə əlaqə qurmaq və texniki dəstək sorğularını qəbul etmək məqsədi daşıyır. Saytda
@@ -62,7 +62,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">4. İstifadəçi Məsuliyyətləri</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">4. İstifadəçi Məsuliyyətləri</h2>
               <p>İstifadəçi saytdan istifadə edərkən aşağıdakılara riayət etməlidir:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1.5">
                 <li>Qanunvericiliyə və ictimai əxlaq normalarına uyğun davranmaq;</li>
@@ -78,7 +78,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">5. İntellektual Mülkiyyət</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">5. İntellektual Mülkiyyət</h2>
               <p>
                 Saytda yerləşdirilən bütün materiallar — mətnlər, qrafiklər, loqolar, ikonlar, dizayn elementləri,
                 proqram kodu və struktur — NetSolutions şirkətinin və ya onun tərəfdaşlarının intellektual
@@ -92,7 +92,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">6. Üçüncü Tərəf Linkləri</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">6. Üçüncü Tərəf Linkləri</h2>
               <p>
                 Saytımızda üçüncü tərəf veb-saytlarına keçid linkləri yerləşdirilə bilər. Bu linklər yalnız
                 istifadəçilərə əlavə məlumat təqdim etmək məqsədi daşıyır. NetSolutions həmin saytların
@@ -105,7 +105,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">7. Xidmətlərin Dəyişdirilməsi və Mövcudluğu</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">7. Xidmətlərin Dəyişdirilməsi və Mövcudluğu</h2>
               <p>
                 NetSolutions, saytda təqdim olunan xidmətləri, məlumatları, texniki parametrləri və ya bu
                 İstifadə Şərtlərini əvvəlcədən xəbərdarlıq etmədən dəyişdirmək, dayandırmaq və ya ləğv etmək
@@ -119,7 +119,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">8. Məhdud Məsuliyyət</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">8. Məhdud Məsuliyyət</h2>
               <p>
                 Saytda təqdim olunan məlumatlar ümumi xarakter daşıyır və peşəkar məsləhət əvəzinə
                 istifadə edilməməlidir. Şirkətimiz bu məlumatların tam dəqiqliyinə, aktuallığına və
@@ -133,7 +133,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">9. Mübahisələrin Həlli</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">9. Mübahisələrin Həlli</h2>
               <p>
                 Bu İstifadə Şərtləri ilə bağlı hər hansı mübahisə və ya fərqli düşüncə əvvəlcə dostluq
                 yolu ilə həll edilməyə cəhd olunur. Razılıq əldə olunmadıqda mübahisələr Azərbaycan
@@ -143,10 +143,10 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">10. Əlaqə</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">10. Əlaqə</h2>
               <p>
                 İstifadə Şərtləri ilə bağlı suallarınız üçün bizimlə{' '}
-                <a href="mailto:info@netsolutions.az" className="text-[#0275d8] hover:underline font-medium">
+                <a href="mailto:info@netsolutions.az" className="text-[#0275d8] dark:text-[#3b82f6] hover:underline font-medium transition-colors">
                   info@netsolutions.az
                 </a>{' '}
                 e-poçt ünvanı və ya saytdakı əlaqə forması vasitəsilə əlaqə saxlaya bilərsiniz.

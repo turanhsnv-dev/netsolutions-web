@@ -7,24 +7,24 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[#FAFAFA] py-24 sm:py-32">
+    <main className="min-h-screen bg-[#FAFAFA] dark:bg-[#050505] py-24 sm:py-32 transition-colors duration-300">
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[32px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100">
-          <div className="mb-10 border-b border-slate-100 pb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Məxfilik Siyasəti</h1>
-            <p className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+        <div className="bg-white dark:bg-[#0B1120] p-8 md:p-12 lg:p-16 rounded-[32px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 transition-colors duration-300">
+          <div className="mb-10 border-b border-slate-100 dark:border-slate-800 pb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 transition-colors">Məxfilik Siyasəti</h1>
+            <p className="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wide transition-colors">
               Son yenilənmə tarixi: {new Date().toLocaleDateString('az-AZ')}
             </p>
-            <p className="mt-4 text-[16px] text-slate-600 leading-relaxed">
+            <p className="mt-4 text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
               NetSolutions şirkəti istifadəçilərinin şəxsi məlumatlarının qorunmasına yüksək prioritet verir.
               Bu sənəd məlumatlarınızın necə toplanıldığını, saxlanıldığını, istifadə edildiyini və
               hüquqlarınızı izah edir.
             </p>
           </div>
 
-          <div className="space-y-8 text-[16px] text-slate-600 leading-relaxed">
+          <div className="space-y-8 text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">1. Ümumi Müddəalar</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">1. Ümumi Müddəalar</h2>
               <p>
                 &quot;NetSolutions&quot; şirkəti olaraq sizin məxfiliyinizə hörmətlə yanaşırıq və şəxsi
                 məlumatlarınızın təhlükəsizliyini təmin etməyi özümüzə borc bilirik. Bu Məxfilik Siyasəti,
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">2. Topladığımız Məlumatlar</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">2. Topladığımız Məlumatlar</h2>
               <p>
                 Saytımızdakı &quot;Əlaqə&quot; forması vasitəsilə bizimlə əlaqə saxladığınız zaman adınız,
                 e-poçt ünvanınız, telefon nömrəniz (təqdim etdiyiniz halda) və mesajınız daxil olmaqla,
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">3. Məlumatların İstifadəsi</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">3. Məlumatların İstifadəsi</h2>
               <p>Toplanmış məlumatlar yalnız aşağıdakı məqsədlər üçün istifadə olunur:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1.5">
                 <li>Sizin sorğu və suallarınıza cavab vermək;</li>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">4. Çərəzlər (Cookies)</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">4. Çərəzlər (Cookies)</h2>
               <p>
                 Veb-saytımız funksionallığını təmin etmək, sessiya idarəetməsi və analitika məqsədləri üçün
                 çərəzlər (cookies) istifadə edə bilər. Çərəzlər brauzerinizdə saxlanılan kiçik mətn fayllarıdır.
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">5. Məlumatların Saxlanması</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">5. Məlumatların Saxlanması</h2>
               <p>
                 Şəxsi məlumatlarınız yalnız məqsədinə uyğun lazım olan müddət ərzində saxlanılır. Əlaqə
                 forması vasitəsilə göndərilən sorğular adətən 3 il ərzində arxivdə saxlanılır; qanunla
@@ -100,7 +100,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">6. Məlumatların Qorunması</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">6. Məlumatların Qorunması</h2>
               <p>
                 Biz, şəxsi məlumatlarınızı icazəsiz girişlərdən, dəyişikliklərdən, məhvdən və icazəsiz
                 paylanmadan qorumaq üçün beynəlxalq standartlara uyğun müasir təhlükəsizlik tədbirləri
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">7. Üçüncü Tərəflərə Ötürülme</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">7. Üçüncü Tərəflərə Ötürülme</h2>
               <p>
                 Məlumatlarınız heç bir halda satılmır. Yalnız aşağıdakı hallarda məhdud şəkildə üçüncü
                 tərəflərə ötürülə bilər:
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">8. İstifadəçi Hüquqları</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">8. İstifadəçi Hüquqları</h2>
               <p>Şəxsi məlumatlarınızla bağlı aşağıdakı hüquqlara maliksiniz:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1.5">
                 <li>Məlumatlarınızın işlənməsi haqqında məlumat almaq;</li>
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
               </ul>
               <p className="mt-3">
                 Bu hüquqlarızı istifadə etmək üçün{' '}
-                <a href="mailto:info@netsolutions.az" className="text-[#0275d8] hover:underline font-medium">
+                <a href="mailto:info@netsolutions.az" className="text-[#0275d8] dark:text-[#3b82f6] hover:underline font-medium transition-colors">
                   info@netsolutions.az
                 </a>{' '}
                 ünvanına yazın. Sorğunuza 30 gün ərzində cavab veriləcək.
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">9. Uşaqların Məxfiliyi</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">9. Uşaqların Məxfiliyi</h2>
               <p>
                 Veb-saytımız 18 yaşından kiçik şəxslərə məqsədli şəkildə yönəlmir. Bilərəkdən uşaqlardan
                 şəxsi məlumat toplamırıq. Belə məlumatın toplandığını aşkar etdikdə dərhal silinəcək.
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">10. Siyasət Dəyişiklikləri</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">10. Siyasət Dəyişiklikləri</h2>
               <p>
                 Məxfilik Siyasətini vaxtaşırı yeniləyə bilərik. Əhəmiyyətli dəyişikliklər saytda dərc
                 edilir və lazım gələrsə əlaqə forması vasitəsilə bildiriş göndərilir. Dəyişikliklərdən
@@ -168,11 +168,11 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">11. Əlaqə</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">11. Əlaqə</h2>
               <p>
                 Bu Məxfilik Siyasəti ilə bağlı hər hansı sualınız, şikayətiniz və ya məlumatlarınızla
                 bağlı tələbiniz olarsa, zəhmət olmasa{' '}
-                <a href="mailto:info@netsolutions.az" className="text-[#0275d8] hover:underline font-medium">
+                <a href="mailto:info@netsolutions.az" className="text-[#0275d8] dark:text-[#3b82f6] hover:underline font-medium transition-colors">
                   info@netsolutions.az
                 </a>{' '}
                 ünvanı ilə bizimlə əlaqə saxlayın. Sorğularınızı ən qısa müddətdə cavablandırmaya çalışırıq.
