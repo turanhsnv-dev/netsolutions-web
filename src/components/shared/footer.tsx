@@ -58,12 +58,21 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Section: Copyright */}
+        {/* Bottom Section: Copyright & Legal */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-[14px]">
             &copy; {currentYear} NetSolutions.az. Bütün hüquqlar qorunur.
           </p>
-          <div className="flex gap-4">
-            <a href={`https://instagram.com/${CONTACT_INFO.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-[#0275d8] text-[14px] font-medium transition-colors">
+          
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[14px]">
+            <Link href="/privacy" className="text-slate-400 hover:text-[#0275d8] font-medium transition-colors">
+              Məxfilik Siyasəti
+            </Link>
+            <Link href="/terms" className="text-slate-400 hover:text-[#0275d8] font-medium transition-colors">
+              İstifadə Şərtləri
+            </Link>
+            <span className="hidden md:block w-1 h-1 rounded-full bg-slate-300"></span>
+            <a href={`https://instagram.com/${CONTACT_INFO.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-[#0275d8] font-medium transition-colors">
               Instagram
             </a>
           </div>
