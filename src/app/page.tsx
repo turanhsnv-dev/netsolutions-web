@@ -3,6 +3,7 @@ import { HeroSection } from '@/features/home/components/hero-section';
 import { FeaturesSection } from '@/features/home/components/features-section';
 import { SecurityTreeSection } from '@/features/security-tree/components/security-tree-section';
 import { ServicesSection } from '@/features/services/components/services-section';
+import { PartnersSection } from '@/features/partners/components/partners-section';
 
 const AboutSection = dynamic(
   () => import('@/features/about/components/about-section').then((mod) => mod.AboutSection)
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
+      <PartnersSection />
       <FeaturesSection />
       <SecurityTreeSection />
       <ServicesSection />
