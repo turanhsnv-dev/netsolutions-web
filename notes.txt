@@ -1,0 +1,4 @@
+add partner section - logpoint ...
+add linkedin 
+fixed light aand dark mode toggle components
+kibertehlukesizlik helleri

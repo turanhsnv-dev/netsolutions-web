@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#FAFAFA] dark:bg-[#050505] py-24 sm:py-32 transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white dark:bg-[#0B1120] p-8 md:p-12 lg:p-16 rounded-[32px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 transition-colors duration-300">
           <div className="mb-10 border-b border-slate-100 dark:border-slate-800 pb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 transition-colors">Məxfilik Siyasəti</h1>

@@ -41,7 +41,7 @@ export const HeroVisual = () => {
   }, { scope: visualRef });
 
   return (
-    <div ref={visualRef} className="relative w-full max-w-[460px] ml-auto" aria-hidden="true">
+    <div ref={visualRef} className="relative w-full max-w-115  ml-auto" aria-hidden="true">
       {/* Background glow */}
       <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#0275d8]/10 dark:bg-[#0275d8]/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full blur-2xl" />
@@ -62,7 +62,7 @@ export const HeroVisual = () => {
         </div>
         
         {/* Body */}
-        <div className="p-5 space-y-1.5 min-h-[300px]">
+        <div className="p-5 space-y-1.5 min-h-75">
           {/* Command 1 */}
           <div className="flex items-center gap-2">
             <span className="text-emerald-600 dark:text-emerald-400">➜</span>
@@ -91,7 +91,7 @@ export const HeroVisual = () => {
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400">&nbsp;&nbsp;Loaded: loaded (/etc/systemd/system/helpdesk.service)</div>
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400">&nbsp;&nbsp;Active: <span className="text-emerald-600 dark:text-emerald-400">active (running)</span> since Mon 2026-06-22</div>
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400">&nbsp;&nbsp;Main PID: 1024 (node)</div>
-          <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400 mb-4">&nbsp;&nbsp;Status: "All systems operational"</div>
+          <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400 mb-4">&nbsp;&nbsp;Status: &quot;All systems operational&quot;</div>
 
           {/* Command 3 */}
           <div className="out-2 opacity-0 flex items-center gap-2">

@@ -1,8 +1,8 @@
 'use client';
 
-import { ReactNode, useEffect, useRef } from 'react';
-// Köhnə '@studio-freight/react-lenis' əvəzinə yeni rəsmi import:
-import { ReactLenis } from 'lenis/react'; 
+import { useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { ReactLenis, type LenisRef } from 'lenis/react';
 import { gsap } from 'gsap';
 
 interface SmoothScrollProviderProps {
@@ -10,7 +10,7 @@ interface SmoothScrollProviderProps {
 }
 
 export const SmoothScrollProvider = ({ children }: SmoothScrollProviderProps) => {
-  const lenisRef = useRef<any>(null);
+  const lenisRef = useRef<LenisRef | null>(null);
 
   useEffect(() => {
     // GSAP ScrollTrigger ilə Lenis-i tam sinxronizasiya edirik

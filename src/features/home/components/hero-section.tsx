@@ -26,10 +26,10 @@ export const HeroSection = () => {
     <section ref={container} className="relative w-full overflow-hidden bg-white dark:bg-[#050505] pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 transition-colors duration-300">
       
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[600px] h-[500px] bg-[#0275d8]/[0.03] dark:bg-[#0275d8]/[0.08] rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-150 h-125 bg-[#0275d8]/3 dark:bg-[#0275d8]/8 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           <div className="flex flex-col items-start lg:col-span-7">
@@ -44,7 +44,7 @@ export const HeroSection = () => {
 
             <h1 className="hero-title text-[42px] sm:text-[54px] lg:text-[60px] font-extrabold text-[#111111] dark:text-white leading-[1.1] tracking-tight mb-6 transition-colors">
               Biznesinizin <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0275d8] to-[#025aa5] dark:from-[#3b82f6] dark:to-[#0275d8]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#0275d8] to-[#025aa5] dark:from-[#3b82f6] dark:to-[#0275d8]">
                 Texnoloji Gücünü
               </span> <br className="hidden sm:block" />
               Kəşf Edin
@@ -57,7 +57,7 @@ export const HeroSection = () => {
             <div className="hero-buttons flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link 
                 href="#contact"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0275d8] hover:bg-[#025aa5] text-white px-8 h-[52px] rounded-full font-semibold transition-all shadow-[0_8px_20px_rgba(2,117,216,0.25)] dark:shadow-[0_8px_20px_rgba(2,117,216,0.15)] hover:shadow-[0_12px_25px_rgba(2,117,216,0.35)]"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0275d8] hover:bg-[#025aa5] text-white px-8 h-13 rounded-full font-semibold transition-all shadow-[0_8px_20px_rgba(2,117,216,0.25)] dark:shadow-[0_8px_20px_rgba(2,117,216,0.15)] hover:shadow-[0_12px_25px_rgba(2,117,216,0.35)]"
               >
                 Bizimlə əlaqə saxla
                 <ArrowRight className="w-5 h-5" />
@@ -65,7 +65,7 @@ export const HeroSection = () => {
               
               <Link 
                 href="#services"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#151f38] text-slate-700 dark:text-slate-300 px-8 h-[52px] rounded-full font-semibold transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#151f38] text-slate-700 dark:text-slate-300 px-8 h-13 rounded-full font-semibold transition-all"
               >
                 Xidmətlərimizə bax
                 <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500" />

@@ -46,7 +46,7 @@ export const AboutSection = () => {
 
   return (
     <section ref={sectionRef} id="about" className="relative w-full bg-white dark:bg-[#050505] py-24 lg:py-32 overflow-hidden transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Sol Sütun: Məzmun */}
@@ -86,10 +86,10 @@ export const AboutSection = () => {
           </div>
 
           {/* Sağ Sütun: Vizual (Qutular) */}
-          <div className="relative h-[500px] w-full hidden lg:block">
+          <div className="relative h-125 w-full hidden lg:block">
             
             {/* Böyük arxa şəkil */}
-            <div className="about-visual-box absolute top-0 right-0 w-[85%] h-[400px] rounded-[32px] overflow-hidden border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+            <div className="about-visual-box absolute top-0 right-0 w-[85%] h-100 rounded-[32px] overflow-hidden border border-slate-200 dark:border-slate-800 transition-colors duration-300">
               <Image
                 src="/images/about-img.jpg"
                 alt="NetSolutions komandası ofisdə İT sistemləri üzərində işləyir"
@@ -99,14 +99,14 @@ export const AboutSection = () => {
                 priority
               />
               <div
-                className="absolute inset-0 hidden dark:block bg-gradient-to-t from-[#050505] via-[#050505]/45 to-transparent"
+                className="absolute inset-0 hidden dark:block bg-linear-to-t from-[#050505] via-[#050505]/45 to-transparent"
                 aria-hidden="true"
               />
             </div>
 
             {/* Ön tərəfə çıxan kiçik şəkil qutusu */}
-            <div className="about-visual-box absolute bottom-0 left-0 w-[55%] h-[260px] bg-white dark:bg-[#050505] rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white dark:border-[#0B1120] overflow-hidden transition-colors duration-300">
-               <div className="absolute inset-0 bg-gradient-to-tr from-[#0275d8] to-[#025aa5] dark:from-[#025aa5] dark:to-[#0f172a] flex flex-col items-center justify-center text-white p-6 text-center transition-colors duration-300">
+            <div className="about-visual-box absolute bottom-0 left-0 w-[55%] h-65 bg-white dark:bg-[#050505] rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white dark:border-[#0B1120] overflow-hidden transition-colors duration-300">
+               <div className="absolute inset-0 bg-linear-to-tr from-[#0275d8] to-[#025aa5] dark:from-[#025aa5] dark:to-[#0f172a] flex flex-col items-center justify-center text-white p-6 text-center transition-colors duration-300">
                   <Shield className="w-12 h-12 mb-3 opacity-80" />
                   <h4 className="font-bold text-lg">Etibarlı İnfrastruktur</h4>
                   <p className="text-xs text-white/80 mt-1">Sizin məlumatlarınız tam təhlükəsizlikdədir.</p>

@@ -27,8 +27,8 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
     <article
       className={cn(
         'service-card relative flex flex-col overflow-hidden rounded-[24px] bg-white dark:bg-[#0B1120] border border-[#E5E7EB] dark:border-slate-800/80 p-8 shadow-[0_1px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-shadow duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)] dark:hover:shadow-[0_8px_30px_rgba(2,117,216,0.05)]',
-        !isMainCard && !isWideCard && 'min-h-[168px]',
-        isMainCard && 'min-h-[360px] md:min-h-0',
+        !isMainCard && !isWideCard && 'min-h-42',
+        isMainCard && 'min-h-90 md:min-h-0',
         colSpan,
         rowSpan,
       )}
@@ -55,7 +55,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
             className={cn(
               'text-[#6B7280] dark:text-slate-400 text-[14px] leading-[1.65] mt-3 transition-colors duration-300',
               isMainCard && 'max-w-[58%]',
-              isWideCard && 'max-w-[720px]',
+              isWideCard && 'max-w-180',
             )}
           >
             {description}

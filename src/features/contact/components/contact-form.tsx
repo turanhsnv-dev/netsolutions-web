@@ -14,7 +14,7 @@ export const ContactForm = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactFormValues) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
@@ -72,7 +72,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 w-full flex items-center justify-center gap-2 bg-[#0275d8] dark:bg-[#3b82f6] hover:bg-[#025aa5] dark:hover:bg-[#2563eb] text-white px-8 h-[52px] rounded-xl font-bold transition-all disabled:opacity-70 shadow-[0_8px_20px_rgba(2,117,216,0.2)]"
+          className="mt-2 w-full flex items-center justify-center gap-2 bg-[#0275d8] dark:bg-[#3b82f6] hover:bg-[#025aa5] dark:hover:bg-[#2563eb] text-white px-8 h-13 rounded-xl font-bold transition-all disabled:opacity-70 shadow-[0_8px_20px_rgba(2,117,216,0.2)]"
         >
           {isSubmitting ? 'Göndərilir...' : (
             <>

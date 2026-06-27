@@ -91,11 +91,11 @@ export const TestimonialsSection = () => {
       className="relative w-full bg-[#FAFAFA] dark:bg-[#050505] py-20 md:py-24 border-t border-slate-100 dark:border-slate-800/50 transition-colors duration-300"
     >
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#0275d8]/[0.02] dark:bg-[#0275d8]/[0.05] blur-[120px] rounded-full pointer-events-none transition-colors duration-300"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-87.5 bg-[#0275d8]/2 dark:bg-[#0275d8]/5 blur-[120px] rounded-full pointer-events-none transition-colors duration-300"
         aria-hidden="true"
       />
 
-      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
         <header className="flex flex-col items-center text-center mb-14 md:mb-16">
           <div className="testimonials-header-anim flex items-center gap-1.5 text-[#0275d8] dark:text-[#3b82f6] bg-[#F4F9FF] dark:bg-[#0275d8]/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.14em] uppercase mb-5 transition-colors">
             <MessageSquareQuote className="w-3.5 h-3.5" />
@@ -104,7 +104,7 @@ export const TestimonialsSection = () => {
           <h2 className="testimonials-header-anim text-[36px] md:text-[44px] font-bold text-[#111111] dark:text-white tracking-tight mb-4 leading-tight transition-colors">
             Müştərilərimiz Nə Deyir?
           </h2>
-          <p className="testimonials-header-anim text-[#6B7280] dark:text-slate-400 text-[15px] max-w-[560px] leading-relaxed transition-colors">
+          <p className="testimonials-header-anim text-[#6B7280] dark:text-slate-400 text-[15px] max-w-140 leading-relaxed transition-colors">
             Xidmət göstərdiyimiz və rəqəmsal infrastrukturlarını gücləndirdiyimiz tərəfdaşlarımızın təcrübələri.
           </p>
         </header>

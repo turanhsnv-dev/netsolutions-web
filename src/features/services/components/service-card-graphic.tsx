@@ -3,7 +3,7 @@ export const ServiceCardGraphic = () => (
     viewBox="0 0 220 180"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="absolute right-0 bottom-0 w-[220px] h-[180px] pointer-events-none transition-colors duration-300"
+    className="absolute right-0 bottom-0 w-55 h-45 pointer-events-none transition-colors duration-300"
     aria-hidden="true"
   >
     <rect

@@ -77,7 +77,7 @@ export const ServicesSection = () => {
 
   return (
     <section ref={sectionRef} id="services" className="w-full bg-white dark:bg-[#050505] py-20 md:py-24 transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Başlıq Hissəsi */}
         <header className="flex flex-col items-center text-center mb-14 md:mb-16">
@@ -88,7 +88,7 @@ export const ServicesSection = () => {
           <h2 className="services-header-anim text-[36px] md:text-[44px] font-bold text-[#111111] dark:text-white tracking-tight mb-4 leading-tight transition-colors">
             Kompleks İT Həllər Baza
           </h2>
-          <p className="services-header-anim text-[#6B7280] dark:text-slate-400 text-[15px] max-w-[560px] leading-relaxed transition-colors">
+          <p className="services-header-anim text-[#6B7280] dark:text-slate-400 text-[15px] max-w-140 leading-relaxed transition-colors">
             Biznesinizin hər bir ehtiyacını qarşılayacaq geniş çeşiddə texnoloji xidmətlər portfeli.
           </p>
         </header>

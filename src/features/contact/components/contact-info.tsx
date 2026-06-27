@@ -36,7 +36,7 @@ export const ContactInfo = () => {
       <div className="flex flex-col gap-6 mb-10">
         {items.map((item) => (
           <div key={item.label} className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 dark:bg-[#0275d8]/10 text-[#0275d8] dark:text-[#3b82f6]">
+            <div className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 dark:bg-[#0275d8]/10 text-[#0275d8] dark:text-[#3b82f6]">
               <item.icon className="w-5 h-5" />
             </div>
             <div>
@@ -44,7 +44,8 @@ export const ContactInfo = () => {
               <a
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noreferrer' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                aria-label={item.external ? `${item.label} (opens in a new tab)` : undefined}
                 className="text-lg font-bold text-slate-800 dark:text-slate-200 hover:text-[#0275d8] dark:hover:text-[#3b82f6] transition-colors"
               >
                 {item.value}
@@ -54,8 +55,8 @@ export const ContactInfo = () => {
         ))}
       </div>
 
-      <div className="mt-auto relative w-full h-[220px] bg-slate-200 dark:bg-[#050505] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#050505] dark:to-[#0f172a] flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-colors">
+      <div className="mt-auto relative w-full h-55 bg-slate-200 dark:bg-[#050505] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+        <div className="absolute inset-0 bg-linear-to-br from-slate-100 to-slate-200 dark:from-[#050505] dark:to-[#0f172a] flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-colors">
           <MapPin className="w-10 h-10 mb-2 opacity-50" />
           <span className="text-sm font-semibold">Xəritə (Google Maps)</span>
         </div>

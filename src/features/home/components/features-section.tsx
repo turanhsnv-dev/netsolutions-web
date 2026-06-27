@@ -72,11 +72,11 @@ export const FeaturesSection = () => {
     >
       {/* Arxa plandakı mavi işıq effekti (Dark modda bir az daha tünd) */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#0275d8]/[0.04] dark:bg-[#0275d8]/[0.08] blur-[100px] rounded-full pointer-events-none transition-colors duration-300"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-87.5 bg-[#0275d8]/4 dark:bg-[#0275d8]/8 blur-[100px] rounded-full pointer-events-none transition-colors duration-300"
         aria-hidden="true"
       />
 
-      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
         <header className="flex flex-col items-center text-center mb-14 md:mb-16">
           <div className="features-header-anim flex items-center gap-1.5 text-[#0275d8] dark:text-[#3b82f6] bg-[#F4F9FF] dark:bg-[#0275d8]/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.14em] uppercase mb-5 transition-colors duration-300">
             ÜSTÜNLÜKLƏRİMİZ
@@ -84,7 +84,7 @@ export const FeaturesSection = () => {
           <h2 className="features-header-anim text-[36px] md:text-[44px] font-bold text-[#111111] dark:text-white tracking-tight mb-4 leading-tight transition-colors duration-300">
             Niyə Bizi Seçməlisiniz?
           </h2>
-          <p className="features-header-anim text-[#6B7280] dark:text-slate-400 text-[15px] max-w-[560px] leading-relaxed transition-colors duration-300">
+          <p className="features-header-anim text-[#6B7280] dark:text-slate-400 text-[15px] max-w-140 leading-relaxed transition-colors duration-300">
             Biznesinizin rəqəmsal inkişafı üçün ən müasir, təhlükəsiz və etibarlı İT həllərini təqdim edirik.
           </p>
         </header>

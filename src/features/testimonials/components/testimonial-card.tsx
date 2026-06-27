@@ -13,7 +13,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
       
       {/* Header: Profil şəkli, Ad, Soyad */}
       <div className="flex items-center gap-4 mb-5">
-        <div className="relative flex-shrink-0 w-12 h-12 rounded-full overflow-hidden ring-2 ring-slate-100 dark:ring-slate-800 bg-slate-100 dark:bg-slate-800">
+        <div className="relative shrink-0 w-12 h-12 rounded-full overflow-hidden ring-2 ring-slate-100 dark:ring-slate-800 bg-slate-100 dark:bg-slate-800">
           <Image
             src={avatar}
             alt={name}
@@ -34,7 +34,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
 
       {/* Body: Rəy mətni */}
       <p className="text-[15px] text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
-        "{content}"
+        &quot;{content}&quot;
       </p>
 
       {/* Footer: Tarix */}

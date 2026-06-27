@@ -10,7 +10,11 @@ export const ThemeToggle = () => {
 
   // Hydration mismatch-in qarşısını almaq üçün komponentin client-də mount olmasını gözləyirik
   useEffect(() => {
-    setMounted(true);
+    const timeoutId = window.setTimeout(() => {
+      setMounted(true);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   if (!mounted) {

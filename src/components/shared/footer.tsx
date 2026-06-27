@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#F8F9FA] dark:bg-[#050505] border-t border-slate-100 dark:border-slate-900 pt-16 pb-8 transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-275  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <Logo variant="full" height={80} className="mb-4" />

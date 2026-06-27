@@ -8,7 +8,7 @@ import { Logo } from './logo';
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-100 dark:border-slate-800/50 bg-white/80 dark:bg-[#050505]/80 backdrop-blur-md transition-colors duration-300">
-      <div className="max-w-[1100px] mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="max-w-275  mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         
         <Logo variant="mark" height={52} />
 
