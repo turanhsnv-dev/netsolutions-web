@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import { ChevronDown, Shield, Server, Key, Database, Bug, HardDrive, Cloud, Code, BrainCircuit } from 'lucide-react';
@@ -72,7 +72,7 @@ export function SecurityTreeSection() {
             <div className="overflow-hidden">
               <div className="relative pl-6 md:pl-12 py-2 space-y-4">
                 {/* Vertical Line */}
-                <div className="absolute left-6 md:left-[3.25rem] top-0 bottom-6 w-px bg-border/50" />
+                <div className="absolute left-6 md:left-13 top-0 bottom-6 w-px bg-border/50" />
 
                 {services.map((service, index) => {
                   const Icon = service.icon;
@@ -85,7 +85,7 @@ export function SecurityTreeSection() {
                       }}
                     >
                       {/* Horizontal Branch */}
-                      <div className="absolute left-0 md:left-[0.75rem] top-1/2 w-6 md:w-8 h-px bg-border/50 group-hover:bg-primary/50 transition-colors" />
+                      <div className="absolute left-0 md:left-3 top-1/2 w-6 md:w-8 h-px bg-border/50 group-hover:bg-primary/50 transition-colors" />
                       
                       <div className="relative z-10 flex-1 ml-8 md:ml-12 p-4 bg-background border border-border/40 rounded-xl hover:border-primary/40 hover:bg-card transition-all duration-300 flex items-center gap-4 shadow-sm group-hover:-translate-y-0.5">
                         <div className="w-10 h-10 rounded-lg bg-secondary/50 flex items-center justify-center text-foreground group-hover:text-primary transition-colors">
