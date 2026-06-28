@@ -21,13 +21,14 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
       <PartnersSection />
+      <AboutSection />
       <FeaturesSection />
       <SecurityTreeSection />
       <ServicesSection />
       <TestimonialsSection />
       <ContactSection />
+      <PartnersSection />
     </>
   );
 }
