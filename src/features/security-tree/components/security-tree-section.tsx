@@ -37,73 +37,100 @@ export function SecurityTreeSection() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          {/* Tree Root */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-x-0 lg:gap-y-6 items-center w-full relative max-w-7xl mx-auto min-h-[600px] py-12">
+            
+          {/* Center Trigger Node */}
+          <div className="col-start-1 lg:col-start-2 row-start-1 lg:row-span-4 flex flex-col items-center justify-center z-20 mx-0 lg:mx-4">
+            <div 
+              onClick={() => setIsOpen(!isOpen)}
+              className="relative p-6 md:p-8 bg-card/60 backdrop-blur-2xl border border-border/20 rounded-[2.5rem] cursor-pointer hover:border-primary/40 hover:bg-card/90 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-primary/5 flex flex-col items-center text-center group w-[280px] md:w-[320px]"
+            >
+              <div className="absolute inset-0 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <Shield className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground relative z-10">
+                KiberTəhlükəsizlik<br/>Həlləri
+              </h3>
+              <p className="text-sm text-muted-foreground mt-2 relative z-10">
+                Xidmətləri görmək üçün klikləyin
+              </p>
+              <div className={cn(
+                "mt-6 w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-secondary-foreground transition-transform duration-500 relative z-10",
+                isOpen ? "rotate-180" : ""
+              )}>
+                <ChevronDown className="w-5 h-5" />
+              </div>
+            </div>
+          </div>
+
+          {/* Left Items */}
+          {services.slice(0, 4).map((service, i) => {
+            const rowStarts = ["lg:row-start-1", "lg:row-start-2", "lg:row-start-3", "lg:row-start-4"];
+            return (
+              <div 
+                key={service.id} 
+                className={cn(
+                  "col-start-1 flex flex-row items-center justify-center lg:justify-end gap-2 lg:gap-0 transition-all duration-700 overflow-hidden",
+                  rowStarts[i],
+                  isOpen ? "max-h-[500px] opacity-100 lg:translate-x-0" : "max-h-0 lg:max-h-[500px] opacity-0 lg:translate-x-12 pointer-events-none"
+                )}
+                style={{ transitionDelay: isOpen ? `${i * 100}ms` : '0ms' }}
+              >
+                <ServiceCard service={service} />
+                <div className="w-6 xl:w-12 h-px bg-border/80 hidden lg:block" />
+              </div>
+            );
+          })}
+
+          {/* Right Items */}
+          {services.slice(4, 8).map((service, i) => {
+            const rowStarts = ["lg:row-start-1", "lg:row-start-2", "lg:row-start-3", "lg:row-start-4"];
+            return (
+              <div 
+                key={service.id} 
+                className={cn(
+                  "col-start-1 lg:col-start-3 flex flex-row items-center justify-center lg:justify-start gap-2 lg:gap-0 transition-all duration-700 overflow-hidden",
+                  rowStarts[i],
+                  isOpen ? "max-h-[500px] opacity-100 lg:translate-x-0" : "max-h-0 lg:max-h-[500px] opacity-0 lg:-translate-x-12 pointer-events-none"
+                )}
+                style={{ transitionDelay: isOpen ? `${i * 100}ms` : '0ms' }}
+              >
+                <div className="w-6 xl:w-12 h-px bg-border/80 hidden lg:block" />
+                <ServiceCard service={service} />
+              </div>
+            );
+          })}
+
+          {/* Bottom Item */}
           <div 
-            onClick={() => setIsOpen(!isOpen)}
-            className="group relative flex items-center justify-between p-6 bg-card border border-border/50 rounded-2xl cursor-pointer hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md"
+             className={cn(
+               "col-start-1 lg:col-start-2 lg:row-start-5 flex flex-col items-center justify-start transition-all duration-700 overflow-hidden",
+               isOpen ? "max-h-[500px] opacity-100 lg:translate-y-0" : "max-h-0 lg:max-h-[500px] opacity-0 lg:-translate-y-12 pointer-events-none"
+             )}
+             style={{ transitionDelay: isOpen ? `400ms` : '0ms' }}
           >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <Shield className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-semibold text-foreground">
-                  KiberTəhlükəsizlik Həlləri
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Müasir çağırışlara qarşı tam müdafiə strukturu
-                </p>
-              </div>
-            </div>
-            <div className={cn(
-              "w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-secondary-foreground transition-transform duration-300",
-              isOpen ? "rotate-180" : ""
-            )}>
-              <ChevronDown className="w-5 h-5" />
-            </div>
+             <div className="h-6 xl:h-10 w-px bg-border/80 hidden lg:block" />
+             <ServiceCard service={services[8]} />
           </div>
 
-          {/* Tree Branches */}
-          <div className={cn(
-            "grid transition-all duration-500 ease-in-out",
-            isOpen ? "grid-rows-[1fr] opacity-100 mt-6" : "grid-rows-[0fr] opacity-0"
-          )}>
-            <div className="overflow-hidden">
-              <div className="relative pl-6 md:pl-12 py-2 space-y-4">
-                {/* Vertical Line */}
-                <div className="absolute left-6 md:left-13 top-0 bottom-6 w-px bg-border/50" />
-
-                {services.map((service, index) => {
-                  const Icon = service.icon;
-                  return (
-                    <div 
-                      key={service.id} 
-                      className="relative flex items-center gap-4 group"
-                      style={{
-                        transitionDelay: isOpen ? `${index * 50}ms` : '0ms'
-                      }}
-                    >
-                      {/* Horizontal Branch */}
-                      <div className="absolute left-0 md:left-3 top-1/2 w-6 md:w-8 h-px bg-border/50 group-hover:bg-primary/50 transition-colors" />
-                      
-                      <div className="relative z-10 flex-1 ml-8 md:ml-12 p-4 bg-background border border-border/40 rounded-xl hover:border-primary/40 hover:bg-card transition-all duration-300 flex items-center gap-4 shadow-sm group-hover:-translate-y-0.5">
-                        <div className="w-10 h-10 rounded-lg bg-secondary/50 flex items-center justify-center text-foreground group-hover:text-primary transition-colors">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-foreground">{service.name}</h4>
-                          <p className="text-sm text-muted-foreground">{service.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ServiceCard({ service }: { service: typeof services[0] }) {
+  const Icon = service.icon;
+  return (
+    <div className="w-full max-w-[280px] sm:max-w-[320px] p-4 bg-card/80 backdrop-blur-md border border-border/40 rounded-xl hover:border-primary/50 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 shadow-sm hover:shadow-md z-10 group">
+      <div className="w-10 h-10 shrink-0 rounded-lg bg-secondary/50 flex items-center justify-center text-foreground group-hover:text-primary transition-colors">
+        <Icon className="w-5 h-5" />
+      </div>
+      <div>
+        <h4 className="font-semibold text-foreground mb-1 text-sm md:text-base">{service.name}</h4>
+        <p className="text-xs md:text-sm text-muted-foreground">{service.desc}</p>
+      </div>
+    </div>
   );
 }
