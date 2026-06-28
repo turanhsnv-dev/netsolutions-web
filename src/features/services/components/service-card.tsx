@@ -26,7 +26,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
     <article
       className={cn(
-        'service-card relative flex flex-col overflow-hidden rounded-[24px] bg-white dark:bg-[#0B1120] border border-[#E5E7EB] dark:border-slate-800/80 p-8 shadow-[0_1px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-shadow duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)] dark:hover:shadow-[0_8px_30px_rgba(2,117,216,0.05)]',
+        'service-card relative flex flex-col overflow-hidden rounded-[24px] bg-white dark:bg-card/80 dark:backdrop-blur-md border border-[#E5E7EB] dark:border-border/40 p-8 shadow-[0_1px_8px_rgba(0,0,0,0.04)] dark:shadow-sm transition-shadow duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)] dark:hover:shadow-md',
         !isMainCard && !isWideCard && 'min-h-42',
         isMainCard && 'min-h-90 md:min-h-0',
         colSpan,

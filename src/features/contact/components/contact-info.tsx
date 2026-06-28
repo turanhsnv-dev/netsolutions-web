@@ -30,7 +30,7 @@ export const ContactInfo = () => {
     },
   ];
   return (
-    <div className="flex flex-col h-full bg-[#FAFAFA] dark:bg-[#0B1120] rounded-[24px] p-8 md:p-10 border border-slate-100 dark:border-slate-800/50 transition-colors">
+    <div className="flex flex-col h-full bg-[#FAFAFA] dark:bg-card/80 dark:backdrop-blur-md rounded-[24px] p-8 md:p-10 border border-slate-100 dark:border-border/40 transition-colors shadow-sm dark:shadow-md">
       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Əlaqə Məlumatları</h3>
       
       <div className="flex flex-col gap-6 mb-10">

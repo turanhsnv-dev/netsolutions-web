@@ -65,7 +65,7 @@ export const HeroSection = () => {
               
               <Link 
                 href="#services"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-[#151f38] text-slate-700 dark:text-slate-300 px-8 h-13 rounded-full font-semibold transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-card/80 dark:backdrop-blur-md border border-slate-200 dark:border-border/40 hover:bg-slate-50 dark:hover:bg-card text-slate-700 dark:text-slate-300 px-8 h-13 rounded-full font-semibold transition-all dark:shadow-sm dark:hover:shadow-md"
               >
                 Xidmətlərimizə bax
                 <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500" />

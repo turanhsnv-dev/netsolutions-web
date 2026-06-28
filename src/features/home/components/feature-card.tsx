@@ -12,7 +12,7 @@ export const FeatureCard = ({ feature, index }: FeatureCardProps) => {
   const formattedIndex = index.toString().padStart(2, '0');
 
   return (
-    <article className="feature-card relative flex flex-col items-start p-8 bg-white dark:bg-[#0B1120] rounded-[24px] border border-slate-100 dark:border-slate-800/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(2,117,216,0.05)] transition-all duration-300 overflow-hidden group">
+    <article className="feature-card relative flex flex-col items-start p-8 bg-white dark:bg-card/80 dark:backdrop-blur-md rounded-[24px] border border-slate-100 dark:border-border/40 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-sm hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:hover:shadow-md transition-all duration-300 overflow-hidden group">
       
       {/* Arxaplanda böyük rəqəm (Su nişanı effekti) */}
       <div className="absolute -right-2 -bottom-6 text-[120px] font-black text-slate-50/50 dark:text-slate-800/20 pointer-events-none transition-colors duration-300 selection:bg-transparent">

@@ -47,7 +47,7 @@ export const HeroVisual = () => {
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full blur-2xl" />
 
       {/* Terminal Window */}
-      <div className="terminal-window relative z-10 w-full rounded-xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden font-mono text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed transition-colors">
+      <div className="terminal-window relative z-10 w-full rounded-xl bg-white dark:bg-card/80 dark:backdrop-blur-md border border-slate-200 dark:border-border/40 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-md overflow-hidden font-mono text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed transition-colors">
         {/* Header */}
         <div className="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#0f172a] border-b border-slate-200 dark:border-slate-800/80 transition-colors">
           <div className="flex gap-2">

@@ -9,7 +9,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   const { name, role, content, date, avatar } = testimonial;
 
   return (
-    <article className="testimonial-card p-6 sm:p-8 bg-white dark:bg-[#0B1120] rounded-[24px] border border-slate-100 dark:border-slate-800/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-colors duration-300">
+    <article className="testimonial-card p-6 sm:p-8 bg-white dark:bg-card/80 dark:backdrop-blur-md rounded-[24px] border border-slate-100 dark:border-border/40 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-sm transition-colors duration-300">
       
       {/* Header: Profil şəkli, Ad, Soyad */}
       <div className="flex items-center gap-4 mb-5">
