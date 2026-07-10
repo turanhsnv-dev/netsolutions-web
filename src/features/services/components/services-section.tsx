@@ -25,54 +25,48 @@ export const ServicesSection = () => {
 
   useGSAP(() => {
     const section = sectionRef.current;
-    const grid = gridRef.current;
-    if (!section || !grid) return;
+    if (!section) return;
 
     const headerEls = gsap.utils.toArray<HTMLElement>('.services-header-anim', section);
-    const cards = Array.from(grid.children) as HTMLElement[];
+    const cards = gsap.utils.toArray<HTMLElement>('.service-card', section);
+
+    // Prevent FOUC and set initial state reliably
+    gsap.set(headerEls, { opacity: 0, y: 30 });
+    gsap.set(cards, { opacity: 0, y: 40 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: 'top 80%',
+        start: 'top 85%',
         once: true,
-        invalidateOnRefresh: true,
       },
     });
 
     if (headerEls.length) {
-      tl.fromTo(
-        headerEls,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: 'power3.out',
-        }
-      );
+      tl.to(headerEls, {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: 'power3.out',
+        clearProps: 'all',
+      });
     }
 
     if (cards.length) {
-      tl.fromTo(
+      tl.to(
         cards,
-        { y: 50, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: {
-            each: 0.1,
-            from: 'start',
-          },
+          duration: 0.7,
+          stagger: 0.1,
           ease: 'power3.out',
+          clearProps: 'all',
         },
-        '-=0.2'
+        '-=0.4'
       );
     }
-
-    requestAnimationFrame(() => ScrollTrigger.refresh());
   }, { scope: sectionRef });
 
   return (

@@ -42,13 +42,10 @@ export const HeroVisual = () => {
 
   return (
     <div ref={visualRef} className="relative w-full max-w-115  ml-auto" aria-hidden="true">
-      {/* Background glow */}
       <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#0275d8]/10 dark:bg-[#0275d8]/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full blur-2xl" />
 
-      {/* Terminal Window */}
       <div className="terminal-window relative z-10 w-full rounded-xl bg-white dark:bg-card/80 dark:backdrop-blur-md border border-slate-200 dark:border-border/40 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-md overflow-hidden font-mono text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed transition-colors">
-        {/* Header */}
         <div className="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#0f172a] border-b border-slate-200 dark:border-slate-800/80 transition-colors">
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-red-400 dark:bg-red-500/80"></div>
@@ -61,9 +58,7 @@ export const HeroVisual = () => {
           </div>
         </div>
         
-        {/* Body */}
         <div className="p-5 space-y-1.5 min-h-75">
-          {/* Command 1 */}
           <div className="flex items-center gap-2">
             <span className="text-emerald-600 dark:text-emerald-400">➜</span>
             <span className="text-blue-600 dark:text-blue-400">~</span>
@@ -86,14 +81,12 @@ export const HeroVisual = () => {
             <span className="cursor-2 opacity-0 w-2 h-4 bg-slate-500 dark:bg-slate-400 inline-block"></span>
           </div>
 
-          {/* Output 2 */}
           <div className="out-2 opacity-0 text-emerald-600 dark:text-emerald-400">● helpdesk.service - NetSolutions 24/7 Helpdesk</div>
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400">&nbsp;&nbsp;Loaded: loaded (/etc/systemd/system/helpdesk.service)</div>
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400">&nbsp;&nbsp;Active: <span className="text-emerald-600 dark:text-emerald-400">active (running)</span> since Mon 2026-06-22</div>
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400">&nbsp;&nbsp;Main PID: 1024 (node)</div>
           <div className="out-2 opacity-0 text-slate-500 dark:text-slate-400 mb-4">&nbsp;&nbsp;Status: &quot;All systems operational&quot;</div>
 
-          {/* Command 3 */}
           <div className="out-2 opacity-0 flex items-center gap-2">
             <span className="text-emerald-600 dark:text-emerald-400">➜</span>
             <span className="text-blue-600 dark:text-blue-400">~</span>

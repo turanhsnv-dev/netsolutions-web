@@ -13,35 +13,52 @@ export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo('.about-text-content > *', 
-      { y: 30, opacity: 0 },
-      {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-        },
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const textEls = gsap.utils.toArray<HTMLElement>('.about-text-content > *', section);
+    const boxEls = gsap.utils.toArray<HTMLElement>('.about-visual-box', section);
+
+    gsap.set(textEls, { y: 30, opacity: 0 });
+    gsap.set(boxEls, { scale: 0.9, opacity: 0 });
+
+    const tlText = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        once: true,
+      }
+    });
+
+    if (textEls.length) {
+      tlText.to(textEls, {
         y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 0.7,
         stagger: 0.15,
         ease: 'power3.out',
-      }
-    );
+        clearProps: 'all',
+      });
+    }
 
-    gsap.fromTo('.about-visual-box',
-      { scale: 0.9, opacity: 0 },
-      {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-        },
+    const tlBox = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 75%',
+        once: true,
+      }
+    });
+
+    if (boxEls.length) {
+      tlBox.to(boxEls, {
         scale: 1,
         opacity: 1,
         duration: 1,
         stagger: 0.2,
         ease: 'back.out(1.2)',
-      }
-    );
+        clearProps: 'all',
+      });
+    }
   }, { scope: sectionRef });
 
   return (

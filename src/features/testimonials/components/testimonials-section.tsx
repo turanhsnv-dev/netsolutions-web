@@ -33,47 +33,65 @@ export const TestimonialsSection = () => {
     if (!section || !masonry) return;
 
     const headerEls = gsap.utils.toArray<HTMLElement>('.testimonials-header-anim', section);
-    const cards = gsap.utils.toArray<HTMLElement>('.testimonial-card', masonry);
-
-    const tl = gsap.timeline({
+    
+    // Header always animates
+    gsap.set(headerEls, { opacity: 0, y: 30 });
+    const headerTl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: 'top 80%',
+        start: 'top 85%',
         once: true,
-        invalidateOnRefresh: true,
       },
     });
 
     if (headerEls.length) {
-      tl.fromTo(
-        headerEls,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: 'power3.out',
-        }
-      );
+      headerTl.to(headerEls, {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: 'power3.out',
+        clearProps: 'all',
+      });
     }
 
-    if (cards.length) {
-      tl.fromTo(
-        cards,
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.08,
-          ease: 'power3.out',
+    const mm = gsap.matchMedia();
+
+    const createCardsAnimation = (selector: string) => {
+      const cards = gsap.utils.toArray<HTMLElement>(selector, masonry);
+      if (!cards.length) return;
+
+      gsap.set(cards, { opacity: 0, y: 40 });
+
+      gsap.to(cards, {
+        scrollTrigger: {
+          trigger: masonry,
+          start: 'top 85%',
+          once: true,
         },
-        '-=0.2'
-      );
-    }
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: 'power3.out',
+        clearProps: 'all',
+        delay: 0.2 // slight delay after header
+      });
+    };
 
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    mm.add("(max-width: 767px)", () => {
+      createCardsAnimation('.mobile-masonry .testimonial-card');
+    });
+
+    mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+      createCardsAnimation('.tablet-masonry .testimonial-card');
+    });
+
+    mm.add("(min-width: 1024px)", () => {
+      createCardsAnimation('.desktop-masonry .testimonial-card');
+    });
+
+    return () => mm.revert();
   }, { scope: sectionRef });
 
   const ColumnStack = ({ items }: { items: ITestimonial[] }) => (
@@ -111,21 +129,21 @@ export const TestimonialsSection = () => {
 
         <div ref={masonryRef}>
           {/* Mobil — tək sütun */}
-          <div className="flex flex-col gap-5 sm:gap-6 md:hidden">
+          <div className="mobile-masonry flex flex-col gap-5 sm:gap-6 md:hidden">
             {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id} testimonial={testimonial} />
             ))}
           </div>
 
           {/* Tablet — 2 sütun Pinterest */}
-          <div className="hidden md:grid lg:hidden grid-cols-2 gap-5 sm:gap-6 items-start">
+          <div className="tablet-masonry hidden md:grid lg:hidden grid-cols-2 gap-5 sm:gap-6 items-start">
             {columnsMd.map((column, index) => (
               <ColumnStack key={index} items={column} />
             ))}
           </div>
 
           {/* Desktop — 3 sütun Pinterest */}
-          <div className="hidden lg:grid grid-cols-3 gap-5 sm:gap-6 items-start">
+          <div className="desktop-masonry hidden lg:grid grid-cols-3 gap-5 sm:gap-6 items-start">
             {columnsLg.map((column, index) => (
               <div
                 key={index}

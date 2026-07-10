@@ -13,8 +13,18 @@ export const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo('.contact-left-anim', { x: -50, opacity: 0 }, { scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }, x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
-    gsap.fromTo('.contact-right-anim', { x: 50, opacity: 0 }, { scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }, x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.set('.contact-left-anim', { x: -50, opacity: 0 });
+    gsap.set('.contact-right-anim', { x: 50, opacity: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: section, start: 'top 80%', once: true }
+    });
+
+    tl.to('.contact-left-anim', { x: 0, opacity: 1, duration: 0.7, ease: 'power3.out', clearProps: 'all' }, 0);
+    tl.to('.contact-right-anim', { x: 0, opacity: 1, duration: 0.7, ease: 'power3.out', clearProps: 'all' }, 0.2);
   }, { scope: sectionRef });
 
   return (

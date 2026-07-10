@@ -1,7 +1,13 @@
 "use client";
 
+import { useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import { Shield, Server, Key, Database, Bug, HardDrive, Cloud, Code, BrainCircuit } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   { id: 'siem', name: 'SIEM & SOAR', icon: Shield, desc: 'Təhdidlərin aşkarlanması və idarə edilməsi' },
@@ -16,8 +22,50 @@ const services = [
 ];
 
 export function SecurityTreeSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const centerNode = section.querySelector('.security-center-node');
+    const cards = gsap.utils.toArray<HTMLElement>('.security-service-card', section);
+
+    gsap.set(centerNode, { scale: 0.8, opacity: 0 });
+    gsap.set(cards, { opacity: 0, scale: 0.9 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        once: true,
+      }
+    });
+
+    if (centerNode) {
+      tl.to(centerNode, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'back.out(1.5)',
+        clearProps: 'all'
+      });
+    }
+
+    if (cards.length) {
+      tl.to(cards, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out',
+        clearProps: 'all'
+      }, '-=0.3');
+    }
+  }, { scope: sectionRef });
+
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
+    <section ref={sectionRef} className="py-24 relative overflow-hidden bg-background">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px]" />
@@ -36,7 +84,7 @@ export function SecurityTreeSection() {
           {/* Center Trigger Node */}
           <div className="col-start-1 lg:col-start-2 row-start-1 lg:row-span-4 flex flex-col items-center justify-center z-20 mx-0 lg:mx-4">
             <div 
-              className="relative p-6 md:p-8 bg-card/60 backdrop-blur-2xl border border-border/20 rounded-[2.5rem] shadow-sm flex flex-col items-center text-center w-70 md:w-[320px]"
+              className="security-center-node relative p-6 md:p-8 bg-card/60 backdrop-blur-2xl border border-border/20 rounded-[2.5rem] shadow-sm flex flex-col items-center text-center w-full sm:w-[320px]"
             >
               <div className="absolute inset-0 bg-primary/5 blur-xl rounded-full" />
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 relative z-10">
@@ -55,7 +103,7 @@ export function SecurityTreeSection() {
               <div 
                 key={service.id} 
                 className={cn(
-                  "col-start-1 flex flex-row items-center justify-center lg:justify-end gap-2 lg:gap-0",
+                  "security-service-card col-start-1 flex flex-row items-center justify-center lg:justify-end gap-2 lg:gap-0",
                   rowStarts[i]
                 )}
               >
@@ -72,7 +120,7 @@ export function SecurityTreeSection() {
               <div 
                 key={service.id} 
                 className={cn(
-                  "col-start-1 lg:col-start-3 flex flex-row items-center justify-center lg:justify-start gap-2 lg:gap-0",
+                  "security-service-card col-start-1 lg:col-start-3 flex flex-row items-center justify-center lg:justify-start gap-2 lg:gap-0",
                   rowStarts[i]
                 )}
               >
@@ -83,7 +131,7 @@ export function SecurityTreeSection() {
           })}
 
           {/* Bottom Item */}
-          <div className="col-start-1 lg:col-start-2 lg:row-start-5 flex flex-col items-center justify-start">
+          <div className="security-service-card col-start-1 lg:col-start-2 lg:row-start-5 flex flex-col items-center justify-start">
              <div className="h-6 xl:h-10 w-px bg-border/80 hidden lg:block" />
              <ServiceCard service={services[8]} />
           </div>
@@ -97,7 +145,7 @@ export function SecurityTreeSection() {
 function ServiceCard({ service }: { service: typeof services[0] }) {
   const Icon = service.icon;
   return (
-    <div className="w-full max-w-70 sm:max-w-[320px] p-4 bg-card/80 backdrop-blur-md border border-border/40 rounded-xl hover:border-primary/50 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 shadow-sm hover:shadow-md z-10 group">
+    <div className="w-full sm:w-[320px] p-4 bg-card/80 backdrop-blur-md border border-border/40 rounded-xl hover:border-primary/50 transition-[box-shadow,border-color] duration-300 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 shadow-sm hover:shadow-md z-10 group">
       <div className="w-10 h-10 shrink-0 rounded-lg bg-secondary/50 flex items-center justify-center text-foreground group-hover:text-primary transition-colors">
         <Icon className="w-5 h-5" />
       </div>

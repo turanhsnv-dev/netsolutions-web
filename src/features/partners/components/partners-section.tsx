@@ -15,13 +15,11 @@ const partners = [
 ];
 
 export function PartnersSection() {
-  // We duplicate the list to create a seamless infinite scroll effect
   const repeatedPartners = [...partners, ...partners];
 
   return (
     <section className="py-8 md:py-12 border-y border-border/40 bg-background/50 overflow-hidden relative">
       <div className="relative flex overflow-hidden py-4 md:py-8">
-        {/* Left/Right Gradients for fade effect */}
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
 
