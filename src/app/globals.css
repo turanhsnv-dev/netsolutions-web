@@ -138,3 +138,41 @@
     @apply font-sans;
   }
 }
+
+@media (max-width: 767px) {
+  /* Disable GSAP scroll animations on mobile to improve UX and speed */
+  .hero-badge,
+  .hero-title,
+  .hero-desc,
+  .hero-buttons,
+  .hero-features,
+  .about-text-content > *,
+  .about-visual-box,
+  .features-header-anim,
+  .feature-card,
+  .security-service-card,
+  .services-header-anim,
+  .service-card,
+  .testimonials-header-anim,
+  .testimonial-card,
+  .contact-left-anim,
+  .contact-right-anim {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Prevent any section or absolute-positioned decorative element from causing horizontal scroll */
+section,
+main {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* iOS Safari: Prevent horizontal rubber-band scrolling across entire page */
+html,
+body {
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
+  max-width: 100vw;
+}

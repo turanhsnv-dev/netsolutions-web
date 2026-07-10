@@ -26,7 +26,7 @@ export const HeroSection = () => {
     <section ref={container} className="relative w-full overflow-hidden bg-white dark:bg-[#050505] pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 transition-colors duration-300">
       
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-150 h-125 bg-[#0275d8]/3 dark:bg-[#0275d8]/8 rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 -translate-y-12 w-150 h-125 bg-[#0275d8]/3 dark:bg-[#0275d8]/8 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-275 mx-auto px-4 sm:px-6 lg:px-8">
