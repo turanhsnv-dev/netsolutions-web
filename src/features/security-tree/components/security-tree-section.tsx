@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Shield, Server, Key, Database, Bug, HardDrive, Cloud, Code, BrainCircuit } from 'lucide-react';
+import { Shield, Server, Key, Database, Bug, HardDrive, Cloud, Code, BrainCircuit, ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,7 @@ const services = [
 
 export function SecurityTreeSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [showAll, setShowAll] = useState(false);
 
   useGSAP(() => {
     const section = sectionRef.current;
@@ -79,18 +81,41 @@ export function SecurityTreeSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-x-0 lg:gap-y-6 items-center w-full relative max-w-7xl mx-auto py-12">
+        {/* MOBILE LAYOUT */}
+        <div className="flex lg:hidden flex-col gap-4 w-full relative z-10 py-8">
+          {services.slice(0, 3).map((service) => (
+            <div key={`mobile-${service.id}`} className="security-service-card">
+              <ServiceCard service={service} />
+            </div>
+          ))}
+          
+          <div className={cn(
+            "grid transition-all duration-500 ease-in-out w-full",
+            showAll ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          )}>
+            <div className="overflow-hidden flex flex-col gap-4">
+              {services.slice(3, 9).map((service) => (
+                <div key={`mobile-${service.id}`} className="security-service-card">
+                  <ServiceCard service={service} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* DESKTOP LAYOUT */}
+        <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-x-0 gap-y-6 items-center w-full relative max-w-7xl mx-auto py-12">
             
           {/* Center Trigger Node */}
-          <div className="col-start-1 lg:col-start-2 row-start-1 lg:row-span-4 flex flex-col items-center justify-center z-20 mx-0 lg:mx-4">
+          <div className="col-start-2 row-start-1 row-span-4 flex flex-col items-center justify-center z-20 mx-4">
             <div 
-              className="security-center-node relative p-6 md:p-8 bg-card/60 backdrop-blur-2xl border border-border/20 rounded-[2.5rem] shadow-sm flex flex-col items-center text-center w-full sm:w-[320px]"
+              className="security-center-node relative p-8 bg-card/60 backdrop-blur-2xl border border-border/20 rounded-[2.5rem] shadow-sm flex flex-col items-center text-center w-[320px]"
             >
               <div className="absolute inset-0 bg-primary/5 blur-xl rounded-full" />
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 relative z-10">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground relative z-10">
+              <h3 className="text-2xl font-bold text-foreground relative z-10">
                 KiberTəhlükəsizlik<br/>Həlləri
               </h3>
             </div>
@@ -98,45 +123,67 @@ export function SecurityTreeSection() {
 
           {/* Left Items */}
           {services.slice(0, 4).map((service, i) => {
-            const rowStarts = ["lg:row-start-1", "lg:row-start-2", "lg:row-start-3", "lg:row-start-4"];
+            const rowStarts = ["row-start-1", "row-start-2", "row-start-3", "row-start-4"];
             return (
               <div 
-                key={service.id} 
+                key={`desktop-${service.id}`} 
                 className={cn(
-                  "security-service-card col-start-1 flex flex-row items-center justify-center lg:justify-end gap-2 lg:gap-0",
+                  "security-service-card col-start-1 flex flex-row items-center justify-end gap-0",
                   rowStarts[i]
                 )}
               >
                 <ServiceCard service={service} />
-                <div className="w-6 xl:w-12 h-px bg-border/80 hidden lg:block" />
+                <div className="w-12 h-px bg-border/80" />
               </div>
             );
           })}
 
           {/* Right Items */}
           {services.slice(4, 8).map((service, i) => {
-            const rowStarts = ["lg:row-start-1", "lg:row-start-2", "lg:row-start-3", "lg:row-start-4"];
+            const rowStarts = ["row-start-1", "row-start-2", "row-start-3", "row-start-4"];
             return (
               <div 
-                key={service.id} 
+                key={`desktop-${service.id}`} 
                 className={cn(
-                  "security-service-card col-start-1 lg:col-start-3 flex flex-row items-center justify-center lg:justify-start gap-2 lg:gap-0",
+                  "security-service-card col-start-3 flex flex-row items-center justify-start gap-0",
                   rowStarts[i]
                 )}
               >
-                <div className="w-6 xl:w-12 h-px bg-border/80 hidden lg:block" />
+                <div className="w-12 h-px bg-border/80" />
                 <ServiceCard service={service} />
               </div>
             );
           })}
 
           {/* Bottom Item */}
-          <div className="security-service-card col-start-1 lg:col-start-2 lg:row-start-5 flex flex-col items-center justify-start">
-             <div className="h-6 xl:h-10 w-px bg-border/80 hidden lg:block" />
+          <div className="security-service-card col-start-2 row-start-5 flex flex-col items-center justify-start">
+             <div className="h-10 w-px bg-border/80" />
              <ServiceCard service={services[8]} />
           </div>
 
         </div>
+
+        {/* Mobile Show More Button */}
+        <div className="mt-4 flex justify-center lg:hidden">
+          <Button 
+            variant="outline" 
+            onClick={() => setShowAll(!showAll)}
+            className="rounded-full px-6 bg-card hover:bg-accent hover:text-accent-foreground border-border/40 transition-all duration-300 shadow-sm"
+          >
+            {showAll ? (
+              <>
+                Daha az göstər
+                <ChevronUp className="w-4 h-4 ml-2" />
+              </>
+            ) : (
+              <>
+                Bütün həlləri gör
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </>
+            )}
+          </Button>
+        </div>
+
       </div>
     </section>
   );

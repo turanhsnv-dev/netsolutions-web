@@ -28,7 +28,7 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-slate-100 dark:border-slate-800/50 bg-white/80 dark:bg-[#050505]/80 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-275 mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        <Logo variant="mark" height={52} />
+        <Logo variant="mark" height={52} priority={true} />
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -89,7 +89,12 @@ export const Header = () => {
           <Logo variant="mark" height={40} />
           <button 
             type="button" 
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              if (document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur();
+              }
+              setIsOpen(false);
+            }}
             className="p-2 -mr-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
             aria-label="Menyunu bağla"
           >
@@ -102,7 +107,12 @@ export const Header = () => {
             <Link
               key={link.label}
               href={link.href}
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                if (document.activeElement instanceof HTMLElement) {
+                  document.activeElement.blur();
+                }
+                setIsOpen(false);
+              }}
               className="flex items-center justify-between group py-4 px-2 rounded-xl hover:bg-[#F4F9FF] dark:hover:bg-[#0275d8]/10 transition-colors"
             >
               <span className="text-xl font-bold text-slate-900 dark:text-white transition-colors group-hover:text-[#0275d8] dark:group-hover:text-[#3b82f6]">

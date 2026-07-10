@@ -8,12 +8,13 @@ type LogoProps = {
   variant?: 'mark' | 'full';
   height?: number;
   className?: string;
+  priority?: boolean;
 };
 
 const logoImageClass =
   'dark:brightness-0 dark:invert transition-[filter] duration-300';
 
-export const Logo = ({ variant = 'full', height = 48, className = '' }: LogoProps) => {
+export const Logo = ({ variant = 'full', height = 48, className = '', priority = false }: LogoProps) => {
   if (variant === 'mark') {
     const markHeight = height;
     const markWidth = Math.round(markHeight * 1.15);
@@ -33,7 +34,7 @@ export const Logo = ({ variant = 'full', height = 48, className = '' }: LogoProp
             fill
             sizes={`${markWidth}px`}
             className={`object-cover object-top ${logoImageClass}`}
-            priority
+            priority={priority}
           />
         </div>
       </Link>
@@ -54,7 +55,7 @@ export const Logo = ({ variant = 'full', height = 48, className = '' }: LogoProp
         height={height}
         className={logoImageClass}
         style={{ height, width }}
-        priority
+        priority={priority}
       />
     </Link>
   );

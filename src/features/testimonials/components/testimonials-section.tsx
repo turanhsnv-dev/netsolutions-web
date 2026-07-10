@@ -90,8 +90,6 @@ export const TestimonialsSection = () => {
     mm.add("(min-width: 1024px)", () => {
       createCardsAnimation('.desktop-masonry .testimonial-card');
     });
-
-    return () => mm.revert();
   }, { scope: sectionRef });
 
   const ColumnStack = ({ items }: { items: ITestimonial[] }) => (
