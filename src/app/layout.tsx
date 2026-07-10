@@ -25,7 +25,7 @@ export default function RootLayout({
     // suppressHydrationWarning Next.js + next-themes üçün mütləq lazımdır
     <html lang="az" suppressHydrationWarning className={`${poppins.variable} h-full scroll-smooth antialiased`}>
       {/* Burada dark mode üçün arxa fonu (#050505) və mətn rəngini təyin etdik */}
-      <body suppressHydrationWarning className={`${poppins.className} min-h-full flex flex-col bg-white dark:bg-[#050505] text-slate-900 dark:text-slate-100 transition-colors duration-300`}>
+      <body suppressHydrationWarning className={`${poppins.className} min-h-full overflow-x-hidden flex flex-col bg-white dark:bg-[#050505] text-slate-900 dark:text-slate-100 transition-colors duration-300`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
